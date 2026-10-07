@@ -28,7 +28,9 @@ python -m unittest tests.test_agentic_world
 python -m agentic_world serve
 ```
 
-前端在 `agentic-world-front/agentic-world-front` 执行 `npm run dev`。开发服会把 `/api` 代理到 `127.0.0.1:8000`。
+前端在 `agentic-world-front` 仓库执行 `npm run dev`。开发服会把 `/api` 代理到 `127.0.0.1:8000`。
+
+云上单机部署见 [deploy/README.md](deploy/README.md)。
 
 ## 连续产出时只做这几件事
 

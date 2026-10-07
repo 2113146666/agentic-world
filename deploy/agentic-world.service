@@ -1,0 +1,19 @@
+[Unit]
+Description=Agentic World API
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/agentic-world
+ExecStartPre=/bin/mkdir -p /opt/agentic-world/data
+ExecStart=/opt/agentic-world/.venv/bin/python -m agentic_world serve --host 127.0.0.1 --port 8000
+StandardOutput=append:/opt/agentic-world/data/service.log
+StandardError=append:/opt/agentic-world/data/service.log
+Restart=on-failure
+RestartSec=3
+# 单进程。不要加 --workers，文件锁和知识索引按一个进程写的。
+
+[Install]
+WantedBy=multi-user.target
