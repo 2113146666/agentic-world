@@ -1,0 +1,33 @@
+id: hotspot
+name: 热点追踪
+focus: 热点在发布前先过政治敏感卡。命中则停在人工复核，不自动发布。
+category: hotspot
+constraints:
+  - 涉及现实政治人物、选举、抗议或领土争议时，结论只能是人工复核
+  - 不自动发布
+  - 不撰写动员或对抗性内容
+stages:
+  - id: capture
+    name: 捕获热点
+    agent: product
+    done_when: 写清热点是什么、给谁看、怎样算处理完
+  - id: evolve
+    name: 核对来源
+    agent: tech
+    done_when: 每条主张旁边有可打开的来源，没有来源就标成未核实
+  - id: select
+    name: 敏感卡
+    agent: product
+    done_when: 填完政治敏感卡。未回答视同需要人工复核
+  - id: produce
+    name: 稿件槽位
+    agent: tech
+    done_when: 只有卡片结论为可公开时才整理稿件槽位；否则只保留复核任务
+  - id: review
+    name: 评测
+    agent: test
+    done_when: 核对卡片有没有漏填。命中敏感时状态必须是人工复核
+  - id: operate
+    name: 发布
+    agent: ops
+    done_when: 未复核的稿件没有发布入口

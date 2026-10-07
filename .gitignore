@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.DS_Store
+data/jobs/
+data/pipeline/
+data/evolution/
+data/**/*.tmp

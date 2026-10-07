@@ -1,0 +1,27 @@
+motto: 开工前先写上三条原则，正式讨论前先拿到外部强模型的输入。
+tracks:
+  - id: llm-knowledge
+    name: 大模型知识
+    scope: 基础 / 前沿
+    layer: foundation
+    category: llm-basics
+  - id: harness
+    name: Harness / workflow
+    scope: 基础 / 前沿
+    layer: frontier
+    category: harness
+  - id: models
+    name: 开闭源模型
+    scope: 架构 / 评测
+    layer: frontier
+    category: models
+  - id: platform
+    name: 工作室底层架构 / 运维
+    scope: 架构 / 运维
+    layer: foundation
+    category: platform
+roles:
+  - product
+  - tech
+  - test
+  - ops

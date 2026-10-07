@@ -1,0 +1,32 @@
+id: comic
+name: 漫剧
+focus: 开源和闭源两条生产线。先选定本次主路径，再扩另一条。
+category: comic-drama
+constraints:
+  - 同一次产出只走一条主路径，开源或闭源
+  - 另一条路径只记录差异，不并行铺开
+stages:
+  - id: capture
+    name: 捕获
+    agent: product
+    done_when: 写清这一集给谁看、时长和完成标准
+  - id: evolve
+    name: 两条路径
+    agent: tech
+    done_when: 开源与闭源各自写清输入和输出，不写实现细节之外的新平台
+  - id: select
+    name: 选择主路径
+    agent: product
+    done_when: 明确本次用开源或闭源，并写下一句理由
+  - id: produce
+    name: 产出
+    agent: tech
+    done_when: 有分镜槽位或样张说明，空槽位要标明未生成
+  - id: review
+    name: 评测
+    agent: test
+    done_when: 画风、对白、时长是否符合选定路径，各有通过或失败
+  - id: operate
+    name: 发布与回收
+    agent: ops
+    done_when: 记下成片位置，以及下次要复用的那条命令或清单

@@ -1,0 +1,32 @@
+id: game
+name: 游戏
+focus: 先做一轮能玩完的核心循环，不先铺世界观长文。
+category: game
+constraints:
+  - 本次只保留一个核心循环
+  - 完成标准是有人能不看讲解玩完一轮
+stages:
+  - id: capture
+    name: 捕获循环
+    agent: product
+    done_when: 用一句话写清玩家反复做的那件事
+  - id: evolve
+    name: 切片规则
+    agent: tech
+    done_when: 写出这一轮的输入、胜负和结束条件
+  - id: select
+    name: 选择切片
+    agent: product
+    done_when: 选定本次要做的那一个切片，其余记为以后
+  - id: produce
+    name: 产出
+    agent: tech
+    done_when: 有可玩切片，或一份不含新系统名词的实现规格
+  - id: review
+    name: 评测
+    agent: test
+    done_when: 记录一次不看讲解的试玩：完成或卡在哪
+  - id: operate
+    name: 发布与回收
+    agent: ops
+    done_when: 记下构建和试玩步骤，以及一条下次要消掉的卡点

@@ -1,0 +1,17 @@
+stages:
+  - id: frame
+    name: 定义问题
+    agent: product
+    done_when: 写清不可再分的事实，和一个第三人能核对的成功标准
+  - id: record
+    name: 最小记录
+    agent: tech
+    done_when: 有一条可入库的知识草稿，或一个可重复执行的步骤
+  - id: check
+    name: 核对
+    agent: test
+    done_when: 来源、角色和成功标准能被第三人核对
+  - id: file
+    name: 入库
+    agent: ops
+    done_when: 文件已放进 content/knowledge，或改进已写成提案

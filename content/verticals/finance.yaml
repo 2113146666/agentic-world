@@ -1,0 +1,34 @@
+id: finance
+name: 金融
+focus: 教育向情景和风险说明。解释不确定性，不给出交易动作。
+category: finance-llm
+constraints:
+  - 不构成投资建议
+  - 不承诺收益
+  - 不生成实盘下单指令
+  - 输出必须包含风险声明
+stages:
+  - id: capture
+    name: 捕获问题
+    agent: product
+    done_when: 写清要解释的教育问题。不写买卖方向
+  - id: evolve
+    name: 摆出假设
+    agent: tech
+    done_when: 列出假设、缺失数据和不确定性
+  - id: select
+    name: 选择情景
+    agent: product
+    done_when: 选定一个情景做解释，并重申不做下单
+  - id: produce
+    name: 产出说明
+    agent: tech
+    done_when: 情景说明里带有风险声明，且没有下单参数
+  - id: review
+    name: 评测
+    agent: test
+    done_when: 确认没有收益承诺、没有实盘指令、风险声明还在
+  - id: operate
+    name: 归档
+    agent: ops
+    done_when: 报告归档路径已记下，且没有接上交易账户

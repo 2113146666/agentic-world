@@ -1,0 +1,32 @@
+id: novel
+name: 小说
+focus: 动态小说与卡片人物。灵感先在世界观规则里演化，再选择支线；未选支线保留。
+category: novel
+constraints:
+  - 人物行为要能回溯到一张人物卡
+  - 未选支线保留，不删除
+stages:
+  - id: capture
+    name: 捕获灵感
+    agent: product
+    done_when: 记下原始灵感、读者是谁、怎样算这次写完
+  - id: evolve
+    name: 世界观内演化
+    agent: tech
+    done_when: 在已写规则内长出至少两条支线
+  - id: select
+    name: 选择
+    agent: product
+    done_when: 选定一条支线，并写下人物卡的名字和诉求；未选支线仍在
+  - id: produce
+    name: 产出
+    agent: tech
+    done_when: 有可阅读的草稿，或明确标成未写的草稿槽位
+  - id: review
+    name: 评测
+    agent: test
+    done_when: 人设、规则和伏笔各有一条通过或失败记录
+  - id: operate
+    name: 发布与回收
+    agent: ops
+    done_when: 记下发布位置，以及一条下次演化要用的评测点
